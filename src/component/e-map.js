@@ -42,16 +42,12 @@ export default function() {
             {name: '香港', value: 54},
             {name: '澳门', value: 0}
         ]
-        function randomValue() {
-            return Math.floor(Math.random() * 50)
-        }
 
         const chart = echarts.init(containerRef.current)
         const option = {
             title: {
                 text: '中国疫情分布图',
                 subtext: '武汉加油，中国加油!',
-                sublink: 'http://www.pm25.in',
                 left: 'center',
                 textAlign: 'center'
             },
@@ -64,11 +60,11 @@ export default function() {
                 {
                     type: 'piecewise',
                     pieces: [
-                        {min: 1500}, // 不指定 max，表示 max 为无限大（Infinity）。
-                        {min: 900, max: 1500},
-                        {min: 310, max: 1000},
-                        {min: 200, max: 300},
-                        {min: 10, max: 200},
+                        {min: 5000}, // 不指定 max，表示 max 为无限大（Infinity）。
+                        {min: 1000, max: 4999},
+                        {min: 500, max: 999},
+                        {min: 100, max: 499},
+                        {min: 10, max: 99},
                         {min: 1, max: 9},    // 不指定 min，表示 min 为无限大（-Infinity）。
                         {value: 0, color: '#FFF'}
                     ],
@@ -80,7 +76,7 @@ export default function() {
             geo: {
                 map: 'china',
                 roam: false,
-                zoom: 1.25,
+                zoom: 1.23,
                 label: {
                     normal: {
                         show: true,
