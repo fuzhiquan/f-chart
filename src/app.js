@@ -1,14 +1,15 @@
 import React from 'react'
-import Gradient from './component/gradient'
-import Pie from './component/pie'
-import Img from './component/img'
-import Line from './component/line'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from './pages/home'
+import Chart from './pages/base'
+import ChartMap from './pages/map'
 
 export default function(props) {
-    return <div>
-        <Gradient/>
-        <Img/>
-        <Line/>
-        <Pie/>
-    </div>
+    return <Router>
+        <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/base' component={Chart} />
+            <Route path='/map' component={ChartMap} />
+        </Switch>
+    </Router>
 }
