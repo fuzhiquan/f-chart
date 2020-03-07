@@ -53,7 +53,7 @@ export default function() {
             },
             tooltip : {
                 formatter:function(params,ticket,callback){
-                    return params.name+'：'+params.value
+                    return `${params.name}: ${params.value}人`
                 }
             },
             visualMap: [
